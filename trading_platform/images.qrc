@@ -3,5 +3,8 @@
         <file>image/icon.jpg</file>
         <file>image/photo.jpg</file>
         <file>image/background1.jpg</file>
+        <file>image/sign_up.jpg</file>
+        <file>image/admin.jpg</file>
+        <file>image/user.jpg</file>
     </qresource>
 </RCC>

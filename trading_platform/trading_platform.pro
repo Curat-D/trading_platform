@@ -16,15 +16,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    admin_screen.cpp \
+    buyer_screen.cpp \
+    info_screen.cpp \
+    logup.cpp \
     main.cpp \
-    login.cpp
+    login.cpp \
+    seller_screen.cpp \
+    user_screen.cpp
 
 HEADERS += \
+    admin_screen.h \
+    buyer_screen.h \
     global.h \
-    login.h
+    info_screen.h \
+    login.h \
+    logup.h \
+    seller_screen.h \
+    user_screen.h
 
-FORMS += \
-    login.ui
+FORMS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
