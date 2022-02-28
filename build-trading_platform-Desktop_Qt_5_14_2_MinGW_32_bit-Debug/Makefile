@@ -251,6 +251,8 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 		../trading_platform/trading_platform.pro \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Widgets.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Gui.prl \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Qml.prl \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Network.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
@@ -437,6 +439,8 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 ../trading_platform/trading_platform.pro:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Widgets.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Gui.prl:
+../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Qml.prl:
+../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Network.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:

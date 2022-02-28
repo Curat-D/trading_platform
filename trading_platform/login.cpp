@@ -5,20 +5,41 @@
 #include <QDebug>
 
 #include "login.h"
+#include "logup.h"
+#include "admin_screen.h"
+#include "user_screen.h"
 #include "global.h"
-
+#include "cal_screen.h"
 
 Login::Login(QWidget *parent)
     : QDialog(parent)
 {
     //initial files
     QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
-    pf.open(QIODevice::ReadWrite);
+    if(!pf.open(QIODevice::ReadWrite)){
+        qDebug()<<"Fail to create file";
+        exit(0);
+    }
     pf.close();
+    QFile pf1("C:/QT/projects/trading_platform/trading_platform/Info/commands.txt");
+    if(!pf1.open(QIODevice::ReadWrite)){
+        qDebug()<<"Fail to create file";
+        exit(0);
+    }
+    pf1.close();
+    QFile pf2("C:/QT/projects/trading_platform/trading_platform/Info/commodity.txt");
+    if(!pf2.open(QIODevice::ReadWrite)){
+        qDebug()<<"Fail to create file";
+        exit(0);
+    }
+    pf2.close();
+    QFile pf3("C:/QT/projects/trading_platform/trading_platform/Info/order.txt");
+    if(!pf2.open(QIODevice::ReadWrite)){
+        qDebug()<<"Fail to create file";
+        exit(0);
+    }
+    pf3.close();
 
-    //set other windows
-
-    user_window = new User_Screen;
 
     //set the window
     setFixedSize(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
@@ -43,7 +64,7 @@ Login::Login(QWidget *parent)
     //add LineEdit
     name = new QLineEdit(this);
     name->setGeometry(QRect(420,200,200,30));
-    QRegExpValidator * val1= new QRegExpValidator(QRegExp("[a-zA-Z0-9\u4e00-\u9fa5]{1,10}$"));//大小写字母数字中文 10位
+    QRegExpValidator * val1= new QRegExpValidator(QRegExp("[a-zA-Z\u4e00-\u9fa5]{1,10}$"));//大小写字母中文 10位
     name->setValidator(val1);
 
     password = new QLineEdit(this);
@@ -61,6 +82,10 @@ Login::Login(QWidget *parent)
     sign_up->setText(tr("注册"));
     sign_up->setGeometry(QRect(550,300,70,30));
 
+    cal = new QPushButton(this);
+    cal->setText(tr("计算器"));
+    cal->setGeometry(QRect(500,350,70,30));
+
     //background
     QPixmap background1;
     background1.load(":/image/background1.jpg");
@@ -70,7 +95,7 @@ Login::Login(QWidget *parent)
 
     connect(sign_in,SIGNAL(clicked()),this,SLOT(checkPassword()));
     connect(sign_up,SIGNAL(clicked()),this,SLOT(log_up()));
-    connect(user_window,SIGNAL(mySignal2()),this,SLOT(log_in()));
+    connect(cal,SIGNAL(clicked()),this,SLOT(calculator()));
 }
 
 Login::~Login()
@@ -82,7 +107,6 @@ Login::~Login()
     delete sign_up;
     delete name;
     delete password;
-    //delete logup_window;
 }
 
 void Login::checkPassword(){
@@ -100,11 +124,9 @@ void Login::checkPassword(){
             QMessageBox tip;
             tip.setText(tr("登陆成功！"));
             tip.exec();
-            this->hide();
+            this->close();
             Admin_Screen* admin_window = new Admin_Screen;
             admin_window->show();
-        //    name->setText("");
-      //      password->setText("");
             return;
         }
         else{
@@ -118,27 +140,29 @@ void Login::checkPassword(){
 
     QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
     if(!pf.open(QIODevice::ReadOnly | QIODevice::Text)){
-        return;
+        qDebug()<<"Fail to open user file!";
+        exit(0);
     }
     QTextStream in(&pf);
     QString line = in.readLine();
     while(!line.isNull()){
-        qDebug()<<"2";
         QStringList list = line.split(",");
         if(list[1]==NAME){
             if(list[2]==PASSWORD){
+                if(list[6] == tr("封禁")){
+                    QMessageBox tip;
+                    tip.setText(tr("该用户已被封禁！"));
+                    tip.exec();
+                    return;
+                }
                 QMessageBox tip;
                 tip.setText(tr("登陆成功！"));
                 tip.exec();
-                this->hide();
-
+                this->close();
+                User_Screen* user_window = new User_Screen;
+                user_window->set_info(list[0]);
                 user_window->show();
-                user_window->uid = list[0];
-                user_window->Name->setText(tr("用户")+list[1]);
-                user_window->Name->setGeometry((QRect(0,20,150,30)));
 //                qDebug()<<user_window->uid;
-                name->setText("");
-                password->setText("");
                 pf.close();
                 return;
             }
@@ -161,15 +185,13 @@ void Login::checkPassword(){
     return ;
 }
 
-
-
 void Login::log_up(){
     Logup* logup_window = new Logup;
-    this->hide();
+    this->close();
     logup_window->show();
 }
 
-void Login::log_in(){
-    user_window->hide();
-    this->show();
+void Login::calculator(){
+    Cal_Screen* cal_window = new Cal_Screen;
+    cal_window->exec();
 }

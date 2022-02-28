@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui qml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -16,24 +16,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Calculator.cpp \
     admin_screen.cpp \
     buyer_screen.cpp \
-    info_screen.cpp \
+    cal_screen.cpp \
     logup.cpp \
     main.cpp \
     login.cpp \
+    myinfo.cpp \
     seller_screen.cpp \
-    user_screen.cpp
+    user_screen.cpp \
+    users.cpp
 
 HEADERS += \
+    Calculator.h \
     admin_screen.h \
     buyer_screen.h \
+    cal_screen.h \
     global.h \
-    info_screen.h \
     login.h \
     logup.h \
+    myinfo.h \
     seller_screen.h \
-    user_screen.h
+    user_screen.h \
+    users.h
 
 FORMS +=
 

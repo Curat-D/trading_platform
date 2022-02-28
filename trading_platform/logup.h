@@ -20,18 +20,16 @@ public:
 private:
     QLabel* photo;
     QLabel* Name;
-    QLabel* Password;;
+    QLabel* Password;
     QPushButton* sign_up;
     QPushButton* back;
     QLineEdit* name;
     QLineEdit* password;
 
 private slots:
-    void emit_Signal();
+    void log_in();
     void checkAccount();
 
-signals:
-    void mySignal();
 };
 
 #endif // LOGUP_H

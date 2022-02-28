@@ -1,10 +1,13 @@
 #include <QDebug>
+#include <QMenuBar>
 #include "user_screen.h"
-#include "ui_user.h"
+#include "login.h"
+#include "myinfo.h"
 
 User_Screen::User_Screen(QWidget *parent) :
-    QMainWindow(parent)
+    Users(parent)
 {
+
     //set window
     setFixedSize(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
     setWindowTitle(tr("淘淘"));
@@ -13,7 +16,6 @@ User_Screen::User_Screen(QWidget *parent) :
     QMenuBar *menu_bar = new QMenuBar(this);
     setMenuBar(menu_bar);
     QMenu* logout = menu_bar->addMenu(tr("注销"));
-
 
     photo = new QLabel(this);
     QPixmap pic;
@@ -40,8 +42,8 @@ User_Screen::User_Screen(QWidget *parent) :
     palette.setBrush(QPalette::Background, QBrush(background1));
     this->setPalette(palette);
 
-    Name = new QLabel(this);
     connect(logout,SIGNAL(aboutToShow()),this,SLOT(Log_out()));
+    connect(personal_info,SIGNAL(clicked()),this,SLOT(PersonalInfo()));
 }
 
 User_Screen::~User_Screen()
@@ -50,5 +52,12 @@ User_Screen::~User_Screen()
 }
 
 void User_Screen::Log_out(){
-    emit mySignal2();
+    Login* login_screen = new Login;
+    login_screen->show();
+    this->close();
+}
+
+void User_Screen::PersonalInfo(){
+    MyInfo* info_screen = new MyInfo(nullptr, get_uid());
+    info_screen->exec();
 }

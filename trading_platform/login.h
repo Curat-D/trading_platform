@@ -5,9 +5,6 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QLineEdit>
-#include "logup.h"
-#include "admin_screen.h"
-#include "user_screen.h"
 
 class Login : public QDialog
 {
@@ -21,7 +18,7 @@ public:
 private slots:
     void checkPassword();
     void log_up();
-    void log_in();
+    void calculator();
 
 private:
     QLabel* photo;
@@ -29,8 +26,8 @@ private:
     QLabel* Password;
     QPushButton* sign_in;
     QPushButton* sign_up;
+    QPushButton* cal;
     QLineEdit* name;
     QLineEdit* password;
-    User_Screen* user_window;
 };
 #endif // LOGIN_H

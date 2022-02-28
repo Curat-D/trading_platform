@@ -4,10 +4,10 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QPushButton>
+#include "users.h"
 #include "global.h"
-//#include "login.h"
 
-class User_Screen : public QMainWindow
+class User_Screen : public Users
 {
     Q_OBJECT
 
@@ -18,18 +18,14 @@ public:
 private slots:
 //    void Buyer();
  //   void Seller();
-  //  void PersonalInfor();
+    void PersonalInfo();
     void Log_out();
 
-signals:
-    void mySignal2();
-
 private:
-    QLabel* photo, *Name;
+    QLabel* photo;
     QPushButton *buyer, *seller, *personal_info;
-    QString uid;
+    QString Uid;
 
-    friend class Login;
 };
 
 

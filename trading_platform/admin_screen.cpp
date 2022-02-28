@@ -1,6 +1,7 @@
 #include <QMenuBar>
 #include <QDebug>
 #include "admin_screen.h"
+#include "login.h"
 
 Admin_Screen::Admin_Screen(QWidget *parent) :
     QMainWindow(parent)
@@ -13,7 +14,6 @@ Admin_Screen::Admin_Screen(QWidget *parent) :
     QMenuBar *menu_bar = new QMenuBar(this);
     setMenuBar(menu_bar);
     QMenu* logout = menu_bar->addMenu(tr("注销"));
-//    QAction* Logout = logout->addAction(tr("注销"));
 
 
     photo = new QLabel(this);
@@ -80,7 +80,9 @@ void Admin_Screen::Ban_user(){
 
 }
 void Admin_Screen::Log_out(){
-    emit mySignal1();
+    Login* login_screen = new Login;
+    login_screen->show();
+    this->close();
 }
 
 

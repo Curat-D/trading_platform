@@ -3,12 +3,11 @@
 #include <QRegExpValidator>
 #include <QMessageBox>
 #include "logup.h"
-
+#include "login.h"
 
 Logup::Logup(QWidget *parent) :
     QDialog(parent)
 {
-
     //set window
     setFixedSize(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
     setWindowTitle(tr("淘淘"));
@@ -32,7 +31,7 @@ Logup::Logup(QWidget *parent) :
     //add LineEdit
     name = new QLineEdit(this);
     name->setGeometry(QRect(420,200,200,30));
-    QRegExpValidator * val1= new QRegExpValidator(QRegExp("[a-zA-Z0-9\u4e00-\u9fa5]{1,10}$"));//大小写字母数字中文 10位
+    QRegExpValidator * val1= new QRegExpValidator(QRegExp("[a-zA-Z\u4e00-\u9fa5]{1,10}$"));//大小写字母中文 10位
     name->setValidator(val1);
 
     password = new QLineEdit(this);
@@ -56,7 +55,7 @@ Logup::Logup(QWidget *parent) :
     palette.setBrush(QPalette::Background, QBrush(background1));
     this->setPalette(palette);
 
-    connect(back,SIGNAL(clicked()),this,SLOT(emit_Signal()));
+    connect(back,SIGNAL(clicked()),this,SLOT(log_in()));
     connect(sign_up,SIGNAL(clicked()),this,SLOT(checkAccount()));
 }
 
@@ -71,8 +70,10 @@ Logup::~Logup()
     delete password;
 }
 
-void Logup::emit_Signal(){
-    emit mySignal();
+void Logup::log_in(){
+    Login* login_screen = new Login;
+    login_screen->show();
+    this->close();
 }
 
 void Logup::checkAccount(){
@@ -137,13 +138,16 @@ void Logup::checkAccount(){
     QString s = QString::number(max_uid%10);
     QString new_id = "U" + h + t + s;
     QTextStream out(&pf);
-    out<<new_id<<","<<NAME<<","<<PASSWORD<<","<<tr("空")<<","<<tr("空")<<","<<tr("0.0")<<","<<tr("正常")<<"\n";
+    out<<new_id<<","<<NAME<<","<<PASSWORD<<","<<","<<","<<tr("0.0")<<","<<tr("正常")<<"\n";
     pf.close();
 //    qDebug()<<"1";
     QMessageBox tip;
     tip.setText(tr("注册成功！"));
     tip.exec();
 //    qDebug()<<"注册成功！";
+    Login* login_screen = new Login;
+    login_screen->show();
+    this->close();
     return;
 }
 

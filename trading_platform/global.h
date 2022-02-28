@@ -4,4 +4,7 @@
 #define LOGIN_WINDOW_HEIGHT (500)
 #define LOGIN_WINDOW_WIDTH (1000)
 
+#define INFO_WINDOW_HEIGHT (500)
+#define INFO_WINDOW_WIDTH (400)
+
 #endif // GLOBAL_H
