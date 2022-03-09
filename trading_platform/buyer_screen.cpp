@@ -1,8 +1,12 @@
+#include <QDebug>
+#include <QTableView>
+#include <QStandardItem>
+#include <QHeaderView>
 #include "buyer_screen.h"
 #include "global.h"
 
-Buyer_Screen::Buyer_Screen(QWidget *parent) :
-    QMainWindow(parent)
+Buyer_Screen::Buyer_Screen(QWidget *parent, QString id) :
+    QMainWindow(parent), Uid(id)
 {
     //set window
     setFixedSize(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);
@@ -48,11 +52,19 @@ Buyer_Screen::Buyer_Screen(QWidget *parent) :
     palette.setBrush(QPalette::Background, QBrush(background1));
     this->setPalette(palette);
 
-    Name = new QLabel(this);
-
+    uid = new QLabel(this);
+    uid->setText(Uid);
+    uid->setGeometry(QRect(20,20,50,30));
 }
 
 Buyer_Screen::~Buyer_Screen()
 {
-
+    delete photo;
+    delete uid;
+    delete view_coms;
+    delete buy_com;
+    delete search;
+    delete view_orders;
+    delete view_detail;
+    delete back;
 }

@@ -80,6 +80,7 @@ void Logup::checkAccount(){
     QString NAME = name->text();
     QString PASSWORD = password->text();
 
+    // fail conditions
     if(NAME.isEmpty()){
         QMessageBox tip;
         tip.setText(tr("用户名不能为空！"));
@@ -101,7 +102,7 @@ void Logup::checkAccount(){
         return;
     }
 
-    QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
+    QFile pf(DIR + "user.txt");
 /*   qDebug() << "permissions before?  " << pf.permissions();
     pf.setPermissions(QFileDevice::WriteOwner | QFileDevice::ReadUser);
     qDebug() << "permissions after?  " << pf.permissions();
@@ -130,13 +131,25 @@ void Logup::checkAccount(){
     }
     pf.close();
     if(!pf.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append)){
-        return;
+        qDebug()<<"无法打开文件";
+        exit(0);
     }
     max_uid = max_uid + 1;
     QString h = QString::number(max_uid/100);
     QString t = QString::number((max_uid%100)/10);
     QString s = QString::number(max_uid%10);
     QString new_id = "U" + h + t + s;
+
+    //add recharge file
+    QString recharge_file = DIR + new_id + ".txt";
+    //qDebug()<<recharge_file;
+    QFile recharge(recharge_file);
+    if(!recharge.open(QIODevice::ReadWrite)){
+        qDebug()<<"创建用户充值文件失败！";
+        exit(0);
+    }
+    recharge.close();
+
     QTextStream out(&pf);
     out<<new_id<<","<<NAME<<","<<PASSWORD<<","<<","<<","<<tr("0.0")<<","<<tr("正常")<<"\n";
     pf.close();
@@ -145,6 +158,7 @@ void Logup::checkAccount(){
     tip.setText(tr("注册成功！"));
     tip.exec();
 //    qDebug()<<"注册成功！";
+
     Login* login_screen = new Login;
     login_screen->show();
     this->close();

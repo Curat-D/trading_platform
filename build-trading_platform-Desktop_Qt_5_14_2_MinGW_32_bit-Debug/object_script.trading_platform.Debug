@@ -2,13 +2,13 @@ debug/Calculator.o
 debug/admin_screen.o
 debug/buyer_screen.o
 debug/cal_screen.o
+debug/commannd.o
 debug/logup.o
 debug/main.o
 debug/login.o
 debug/myinfo.o
 debug/seller_screen.o
 debug/user_screen.o
-debug/users.o
 debug/qrc_images.o
 debug/moc_admin_screen.o
 debug/moc_buyer_screen.o
@@ -18,4 +18,3 @@ debug/moc_logup.o
 debug/moc_myinfo.o
 debug/moc_seller_screen.o
 debug/moc_user_screen.o
-debug/moc_users.o

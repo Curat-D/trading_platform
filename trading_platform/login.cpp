@@ -15,26 +15,26 @@ Login::Login(QWidget *parent)
     : QDialog(parent)
 {
     //initial files
-    QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
+    QFile pf(DIR + "user.txt");
     if(!pf.open(QIODevice::ReadWrite)){
         qDebug()<<"Fail to create file";
         exit(0);
     }
     pf.close();
-    QFile pf1("C:/QT/projects/trading_platform/trading_platform/Info/commands.txt");
+    QFile pf1(DIR + "commands.txt");
     if(!pf1.open(QIODevice::ReadWrite)){
         qDebug()<<"Fail to create file";
         exit(0);
     }
     pf1.close();
-    QFile pf2("C:/QT/projects/trading_platform/trading_platform/Info/commodity.txt");
+    QFile pf2(DIR + "commodity.txt");
     if(!pf2.open(QIODevice::ReadWrite)){
         qDebug()<<"Fail to create file";
         exit(0);
     }
     pf2.close();
-    QFile pf3("C:/QT/projects/trading_platform/trading_platform/Info/order.txt");
-    if(!pf2.open(QIODevice::ReadWrite)){
+    QFile pf3(DIR + "order.txt");
+    if(!pf3.open(QIODevice::ReadWrite)){
         qDebug()<<"Fail to create file";
         exit(0);
     }
@@ -105,6 +105,7 @@ Login::~Login()
     delete Password;
     delete sign_in;
     delete sign_up;
+    delete cal;
     delete name;
     delete password;
 }
@@ -138,7 +139,8 @@ void Login::checkPassword(){
         }
     }
 
-    QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
+ //   QFile pf("C:/QT/projects/trading_platform/trading_platform/Info/user.txt");
+    QFile pf(DIR + "user.txt");
     if(!pf.open(QIODevice::ReadOnly | QIODevice::Text)){
         qDebug()<<"Fail to open user file!";
         exit(0);
@@ -155,15 +157,15 @@ void Login::checkPassword(){
                     tip.exec();
                     return;
                 }
+                pf.close();
                 QMessageBox tip;
                 tip.setText(tr("登陆成功！"));
                 tip.exec();
                 this->close();
-                User_Screen* user_window = new User_Screen;
-                user_window->set_info(list[0]);
+                User_Screen* user_window = new User_Screen(nullptr, list[0]);
                 user_window->show();
 //                qDebug()<<user_window->uid;
-                pf.close();
+
                 return;
             }
             else{
@@ -193,5 +195,5 @@ void Login::log_up(){
 
 void Login::calculator(){
     Cal_Screen* cal_window = new Cal_Screen;
-    cal_window->exec();
+    cal_window->show();
 }

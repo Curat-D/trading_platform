@@ -20,26 +20,26 @@ SOURCES += \
     admin_screen.cpp \
     buyer_screen.cpp \
     cal_screen.cpp \
+    commannd.cpp \
     logup.cpp \
     main.cpp \
     login.cpp \
     myinfo.cpp \
     seller_screen.cpp \
-    user_screen.cpp \
-    users.cpp
+    user_screen.cpp
 
 HEADERS += \
     Calculator.h \
     admin_screen.h \
     buyer_screen.h \
     cal_screen.h \
+    command.h \
     global.h \
     login.h \
     logup.h \
     myinfo.h \
     seller_screen.h \
-    user_screen.h \
-    users.h
+    user_screen.h
 
 FORMS +=
 

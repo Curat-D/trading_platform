@@ -13,6 +13,7 @@ class MyInfo : public QDialog
 public:
     explicit MyInfo(QWidget *parent = nullptr,QString uid = nullptr);
     ~MyInfo();
+    QString get_balance();
 
 private slots:
     void change();

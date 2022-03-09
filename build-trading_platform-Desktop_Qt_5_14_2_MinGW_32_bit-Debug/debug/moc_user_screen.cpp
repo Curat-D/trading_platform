@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_User_Screen_t {
-    QByteArrayData data[4];
-    char stringdata0[34];
+    QByteArrayData data[6];
+    char stringdata0[47];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,12 +33,15 @@ struct qt_meta_stringdata_User_Screen_t {
 static const qt_meta_stringdata_User_Screen_t qt_meta_stringdata_User_Screen = {
     {
 QT_MOC_LITERAL(0, 0, 11), // "User_Screen"
-QT_MOC_LITERAL(1, 12, 12), // "PersonalInfo"
-QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 7) // "Log_out"
+QT_MOC_LITERAL(1, 12, 5), // "Buyer"
+QT_MOC_LITERAL(2, 18, 0), // ""
+QT_MOC_LITERAL(3, 19, 6), // "Seller"
+QT_MOC_LITERAL(4, 26, 12), // "PersonalInfo"
+QT_MOC_LITERAL(5, 39, 7) // "Log_out"
 
     },
-    "User_Screen\0PersonalInfo\0\0Log_out"
+    "User_Screen\0Buyer\0\0Seller\0PersonalInfo\0"
+    "Log_out"
 };
 #undef QT_MOC_LITERAL
 
@@ -48,7 +51,7 @@ static const uint qt_meta_data_User_Screen[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-       2,   14, // methods
+       4,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,10 +59,14 @@ static const uint qt_meta_data_User_Screen[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   24,    2, 0x08 /* Private */,
-       3,    0,   25,    2, 0x08 /* Private */,
+       1,    0,   34,    2, 0x08 /* Private */,
+       3,    0,   35,    2, 0x08 /* Private */,
+       4,    0,   36,    2, 0x08 /* Private */,
+       5,    0,   37,    2, 0x08 /* Private */,
 
  // slots: parameters
+    QMetaType::Void,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -72,8 +79,10 @@ void User_Screen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
         auto *_t = static_cast<User_Screen *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->PersonalInfo(); break;
-        case 1: _t->Log_out(); break;
+        case 0: _t->Buyer(); break;
+        case 1: _t->Seller(); break;
+        case 2: _t->PersonalInfo(); break;
+        case 3: _t->Log_out(); break;
         default: ;
         }
     }
@@ -81,7 +90,7 @@ void User_Screen::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id,
 }
 
 QT_INIT_METAOBJECT const QMetaObject User_Screen::staticMetaObject = { {
-    QMetaObject::SuperData::link<Users::staticMetaObject>(),
+    QMetaObject::SuperData::link<QMainWindow::staticMetaObject>(),
     qt_meta_stringdata_User_Screen.data,
     qt_meta_data_User_Screen,
     qt_static_metacall,
@@ -100,22 +109,22 @@ void *User_Screen::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_meta_stringdata_User_Screen.stringdata0))
         return static_cast<void*>(this);
-    return Users::qt_metacast(_clname);
+    return QMainWindow::qt_metacast(_clname);
 }
 
 int User_Screen::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = Users::qt_metacall(_c, _id, _a);
+    _id = QMainWindow::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 2)
+        if (_id < 4)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 2;
+        _id -= 4;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 2)
+        if (_id < 4)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 2;
+        _id -= 4;
     }
     return _id;
 }

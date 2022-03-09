@@ -14,7 +14,6 @@ public:
     Login(QWidget *parent = nullptr);
     ~Login();
 
-
 private slots:
     void checkPassword();
     void log_up();

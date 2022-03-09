@@ -4,20 +4,19 @@
 #include <QMainWindow>
 #include <QLabel>
 #include <QPushButton>
-#include "users.h"
 #include "global.h"
 
-class User_Screen : public Users
+class User_Screen : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    explicit User_Screen(QWidget *parent = nullptr);
+    explicit User_Screen(QWidget *parent = nullptr, QString id = nullptr);
     ~User_Screen();
 
 private slots:
-//    void Buyer();
- //   void Seller();
+    void Buyer();
+    void Seller();
     void PersonalInfo();
     void Log_out();
 

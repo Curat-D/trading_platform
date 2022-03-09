@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QPushButton>
 #include <QLabel>
+#include <QLineEdit>
+#include <QTableView>
 #include "global.h"
 
 class Admin_Screen : public QMainWindow
@@ -23,13 +25,14 @@ private slots:
     void Ban_user();
     void Log_out();
 
-signals:
-    void mySignal1();
 
 private:
     QLabel* photo;
-    QPushButton *view_all_coms, *search, *withdraw_com, *view_all_orders, *view_all_users, *ban_user, *log_out;
-
+    QPushButton *view_all_coms, *search, *withdraw_com;
+    QPushButton *view_all_orders, *view_all_users;
+    QPushButton *ban_user, *log_out;
+    QLineEdit* search_E;
+    QTableView* table;
 };
 
 #endif // ADMIN_SCREEN_H

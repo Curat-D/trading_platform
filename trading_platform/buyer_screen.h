@@ -10,13 +10,13 @@ class Buyer_Screen : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Buyer_Screen(QWidget *parent = nullptr);
+    explicit Buyer_Screen(QWidget *parent = nullptr, QString id = nullptr);
     ~Buyer_Screen();
 
 private:
-    QLabel* photo, *Name;
+    QLabel* photo, *uid;
     QPushButton *view_coms, *buy_com, *search, *view_orders, *view_detail, *back;
-    QString uid;
+    QString Uid, Balance;
 };
 
 #endif // BUYER_SCREEN_H

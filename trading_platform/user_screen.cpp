@@ -3,9 +3,11 @@
 #include "user_screen.h"
 #include "login.h"
 #include "myinfo.h"
+#include "buyer_screen.h"
+#include "seller_screen.h"
 
-User_Screen::User_Screen(QWidget *parent) :
-    Users(parent)
+User_Screen::User_Screen(QWidget *parent, QString id) :
+    QMainWindow(parent),Uid(id)
 {
 
     //set window
@@ -44,11 +46,16 @@ User_Screen::User_Screen(QWidget *parent) :
 
     connect(logout,SIGNAL(aboutToShow()),this,SLOT(Log_out()));
     connect(personal_info,SIGNAL(clicked()),this,SLOT(PersonalInfo()));
+    connect(buyer,SIGNAL(clicked()),this,SLOT(Buyer()));
+    connect(seller,SIGNAL(clicked()),this,SLOT(Seller()));
 }
 
 User_Screen::~User_Screen()
 {
-
+    delete photo;
+    delete buyer;
+    delete seller;
+    delete personal_info;
 }
 
 void User_Screen::Log_out(){
@@ -58,6 +65,18 @@ void User_Screen::Log_out(){
 }
 
 void User_Screen::PersonalInfo(){
-    MyInfo* info_screen = new MyInfo(nullptr, get_uid());
+    MyInfo* info_screen = new MyInfo(nullptr, Uid);
     info_screen->exec();
+}
+
+void User_Screen::Seller(){
+    Seller_Screen* seller_window = new Seller_Screen();
+    seller_window->show();
+    this->hide();
+}
+
+void User_Screen::Buyer(){
+    Buyer_Screen* buyer_window = new Buyer_Screen();
+    buyer_window->show();
+    this->hide();
 }

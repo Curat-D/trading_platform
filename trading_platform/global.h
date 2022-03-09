@@ -7,4 +7,6 @@
 #define INFO_WINDOW_HEIGHT (500)
 #define INFO_WINDOW_WIDTH (400)
 
+#define DIR (QString::fromStdString("C:/QT/projects/trading_platform/trading_platform/Info/"))
+
 #endif // GLOBAL_H

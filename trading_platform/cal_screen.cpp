@@ -60,9 +60,7 @@ Cal_Screen::~Cal_Screen()
 }
 
 void Cal_Screen::Cal(){
-    qDebug()<<"1";
     QString s=exp_E->text();
-    qDebug()<<s;
     if(s.isEmpty()){
         res_E->setText("");
         QMessageBox tip;

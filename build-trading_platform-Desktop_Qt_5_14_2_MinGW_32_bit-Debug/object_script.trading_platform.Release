@@ -2,13 +2,13 @@ release/Calculator.o
 release/admin_screen.o
 release/buyer_screen.o
 release/cal_screen.o
+release/commannd.o
 release/logup.o
 release/main.o
 release/login.o
 release/myinfo.o
 release/seller_screen.o
 release/user_screen.o
-release/users.o
 release/qrc_images.o
 release/moc_admin_screen.o
 release/moc_buyer_screen.o
@@ -18,4 +18,3 @@ release/moc_logup.o
 release/moc_myinfo.o
 release/moc_seller_screen.o
 release/moc_user_screen.o
-release/moc_users.o
