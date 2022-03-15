@@ -11,13 +11,6 @@
 MyInfo::MyInfo(QWidget *parent, QString uid) :
     QDialog(parent),Uid(uid)
 {
-   // qDebug()<<"1";
-    QFile pf(DIR + "user.txt");
-    if(!pf.open(QIODevice::ReadOnly | QIODevice::Text)){
-        qDebug()<<"Fail to open file";
-        exit(0);
-    }
-
     setFixedSize(INFO_WINDOW_WIDTH, INFO_WINDOW_HEIGHT);
     setWindowTitle("淘淘");
     setWindowIcon(QIcon(":/image/icon.jpg"));
@@ -51,7 +44,12 @@ MyInfo::MyInfo(QWidget *parent, QString uid) :
     Back->setText(tr("返回"));
     Back->setGeometry(QRect(180,180,40,30));
 
-  //  qDebug()<<"3";
+     QFile pf(DIR + "user.txt");
+     if(!pf.open(QIODevice::ReadOnly | QIODevice::Text)){
+         qDebug()<<"Fail to open file";
+         exit(0);
+     }
+
     QTextStream in(&pf);
     QString line = in.readLine();
     while(!line.isNull()){
@@ -176,19 +174,10 @@ void MyInfo::change(){
                 }
                 infos<<(line + "\n");
             }
-            qDebug()<<infos;
+       //     qDebug()<<infos;
             line = in.readLine();
         }
         pf.close();
-        if(jdg==0){
-            Name_E->setText(fro_info[0]);
-            Phone_E->setText(fro_info[1]);
-            Address_E->setText(fro_info[2]);
-            QMessageBox tip;
-            tip.setText(tr("用户名已存在！"));
-            tip.exec();
-            return;
-        }
         if(!pf.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)){
             qDebug()<<"Fail to open file";
             exit(0);
@@ -358,12 +347,12 @@ QString MyInfo::get_balance(){
     }
     pf1.close();
     for(auto& it:orders){
-        qDebug()<<"it.first "<<it.first<<"it.second "<<orders["10"];
+     //   qDebug()<<"it.first "<<it.first<<"it.second "<<orders["10"];
         all_changes = all_changes + "+" + it.first + "*(" + it.second + ")";
     }
      //   qDebug()<<"2";
     cal C;
-    qDebug()<<all_changes;
+  //  qDebug()<<all_changes;
     string exp = all_changes.toStdString();
     string res = C.calculator(exp);
     return QString::fromStdString(res);

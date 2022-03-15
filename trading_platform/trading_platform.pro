@@ -18,26 +18,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     Calculator.cpp \
     admin_screen.cpp \
+    buy_screen.cpp \
     buyer_screen.cpp \
     cal_screen.cpp \
     commannd.cpp \
     logup.cpp \
     main.cpp \
     login.cpp \
+    modify_screen.cpp \
     myinfo.cpp \
+    release_screen.cpp \
     seller_screen.cpp \
     user_screen.cpp
 
 HEADERS += \
     Calculator.h \
     admin_screen.h \
+    buy_screen.h \
     buyer_screen.h \
     cal_screen.h \
     command.h \
     global.h \
     login.h \
     logup.h \
+    modify_screen.h \
     myinfo.h \
+    release_screen.h \
     seller_screen.h \
     user_screen.h
 

@@ -31,8 +31,9 @@ private:
     QPushButton *view_all_coms, *search, *withdraw_com;
     QPushButton *view_all_orders, *view_all_users;
     QPushButton *ban_user, *log_out;
-    QLineEdit* search_E;
+    QLineEdit* search_E, *withdraw_com_E, *ban_user_E;
     QTableView* table;
+
 };
 
 #endif // ADMIN_SCREEN_H

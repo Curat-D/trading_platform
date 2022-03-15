@@ -70,13 +70,13 @@ void User_Screen::PersonalInfo(){
 }
 
 void User_Screen::Seller(){
-    Seller_Screen* seller_window = new Seller_Screen();
+    Seller_Screen* seller_window = new Seller_Screen(nullptr,Uid);
     seller_window->show();
-    this->hide();
+    this->close();
 }
 
 void User_Screen::Buyer(){
-    Buyer_Screen* buyer_window = new Buyer_Screen();
+    Buyer_Screen* buyer_window = new Buyer_Screen(nullptr,Uid);
     buyer_window->show();
-    this->hide();
+    this->close();
 }
