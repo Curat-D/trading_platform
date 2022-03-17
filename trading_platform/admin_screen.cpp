@@ -254,6 +254,8 @@ void Admin_Screen::View_all_users(){
 }
 void Admin_Screen::Ban_user(){
     QString Uid = ban_user_E->text();
+    if(ban_user_E->text().isEmpty())
+        return;
     QString cmd = "UPDATE user SET 用户状态 = 封禁 WHERE 用户ID = "+Uid;
     QDateTime current_date_time = QDateTime::currentDateTime();
     QString current_date = current_date_time.toString("yyyy-MM-dd hh:mm:ss:");

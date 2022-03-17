@@ -9,6 +9,8 @@
 User_Screen::User_Screen(QWidget *parent, QString id) :
     QMainWindow(parent),Uid(id)
 {
+    //change balance
+
 
     //set window
     setFixedSize(LOGIN_WINDOW_WIDTH, LOGIN_WINDOW_HEIGHT);

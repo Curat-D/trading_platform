@@ -82,6 +82,7 @@ void Buy_Screen::buy(){
     QString number=0;
     QString price=0;
     QString seller;
+    QString seller_balance;
     while(!line.isNull()){
         QStringList list = line.split(",");
         if(list[7] == "销售中"){
@@ -131,7 +132,9 @@ void Buy_Screen::buy(){
         QStringList list = line.split(",");
         if(list[0] == Uid){
             balance = list[5];
-            break;
+        }
+        if(list[0] == seller){
+            seller_balance = list[5];
         }
         line = in1.readLine();
     }
@@ -191,22 +194,25 @@ void Buy_Screen::buy(){
 
    //修改余额
     cal C;
-    QString exp = balance + "-" + price + "*" + num;
-    QString new_balance = QString::fromStdString(C.calculator(exp.toStdString()));
+    QString exp1 = balance + "-" + price + "*" + num;
+    QString new_balance1 = QString::fromStdString(C.calculator(exp1.toStdString()));
+    QString exp2 = seller_balance + "+" + price + "*" + num;
+    QString new_balance2 = QString::fromStdString(C.calculator(exp2.toStdString()));
     QFile pf4(DIR + "user.txt");
     if(!pf4.open(QIODevice::ReadOnly | QIODevice::Text)){
         qDebug()<<"Fail to open file";
         exit(0);
     }
-    qDebug()<<"1";
     QTextStream in4(&pf4);
     QStringList infos;
     line = in4.readLine();
     while(!line.isEmpty()){
-        qDebug()<<"1";
         QStringList list = line.split(",");
         if(list[0]==Uid){
-            infos<<(list[0]+","+list[1]+","+list[2]+","+list[2]+","+list[4]+","+new_balance+","+list[6]+"\n");
+            infos<<(list[0]+","+list[1]+","+list[2]+","+list[3]+","+list[4]+","+new_balance1+","+list[6]+"\n");
+        }
+        else if(list[0]==seller){
+            infos<<(list[0]+","+list[1]+","+list[2]+","+list[3]+","+list[4]+","+new_balance2+","+list[6]+"\n");
         }
         else{
             infos<<(line + "\n");
@@ -220,7 +226,6 @@ void Buy_Screen::buy(){
     }
     QTextStream out1(&pf4);
     for(int i=0;i<infos.size();i++){
-        qDebug()<<infos[i];
         QString tmp = infos[i];
         out1<<tmp;
     }
@@ -229,7 +234,6 @@ void Buy_Screen::buy(){
     tip.setText("购买成功！");
     tip.exec();
     this->close();
-
     return;
 }
 
