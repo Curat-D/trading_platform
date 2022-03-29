@@ -12,7 +12,7 @@ release/myinfo.o
 release/release_screen.o
 release/seller_screen.o
 release/user_screen.o
-release/qrc_images.o
+release/qrc_image.o
 release/moc_admin_screen.o
 release/moc_buy_screen.o
 release/moc_buyer_screen.o

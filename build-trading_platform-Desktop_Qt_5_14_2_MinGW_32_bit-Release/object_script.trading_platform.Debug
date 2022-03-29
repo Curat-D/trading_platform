@@ -12,7 +12,7 @@ debug/myinfo.o
 debug/release_screen.o
 debug/seller_screen.o
 debug/user_screen.o
-debug/qrc_images.o
+debug/qrc_image.o
 debug/moc_admin_screen.o
 debug/moc_buy_screen.o
 debug/moc_buyer_screen.o

@@ -2,6 +2,8 @@
 
 #include <QApplication>
 #include <QTextCodec>
+#include <QDebug>
+#include <QDir>
 int main(int argc, char *argv[])
 {
     QTextCodec::setCodecForLocale(QTextCodec::codecForName("UTF-8"));

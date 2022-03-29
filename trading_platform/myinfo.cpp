@@ -165,7 +165,7 @@ void MyInfo::change(){
             QStringList list = line.split(",");
             if(list[0]==Uid){
              //   qDebug()<<"1";
-                fro_info<<list[1]<<list[3]<<list[4];
+                fro_info<<list[1]<<list[3]<<list[4]<<list[5];
                 infos<<(list[0]+","+Name_E->text()+","+list[2]+","+Phone_E->text()+","+Address_E->text()+","+list[5]+","+list[6]+"\n");
             }
             else{
@@ -178,6 +178,16 @@ void MyInfo::change(){
             line = in.readLine();
         }
         pf.close();
+        if(jdg==0){
+            Name_E->setText(fro_info[0]);
+            Phone_E->setText(fro_info[1]);
+            Address_E->setText(fro_info[2]);
+            Balance_E->setText(fro_info[3]);
+            QMessageBox tip;
+            tip.setText(tr("用户名已存在"));
+            tip.exec();
+            return;
+        }
         if(!pf.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)){
             qDebug()<<"Fail to open file";
             exit(0);

@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Info/commands.txt</file>
+        <file>Info/commodity.txt</file>
+        <file>Info/order.txt</file>
+        <file>Info/U000.txt</file>
+        <file>Info/U001.txt</file>
+        <file>Info/U002.txt</file>
+        <file>Info/user.txt</file>
+    </qresource>
+</RCC>

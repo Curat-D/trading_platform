@@ -17,7 +17,7 @@ Login::Login(QWidget *parent)
     //initial files
     QFile pf(DIR + "user.txt");
     if(!pf.open(QIODevice::ReadWrite)){
-        qDebug()<<"Fail to create file";
+        qDebug()<<"Fail to create file1";
         exit(0);
     }
     pf.close();
