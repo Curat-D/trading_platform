@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QLineEdit>
 #include <QTableView>
+#include <QComboBox>
 
 class Buyer_Screen : public QMainWindow
 {
@@ -23,13 +24,15 @@ private slots:
     void View_Orders();
     void View_Detail();
     void Back();
+    void My_Sort();
 
 private:
     QLabel* photo;
-    QPushButton *view_coms, *buy_com, *search, *view_orders, *view_detail, *back;
+    QPushButton *view_coms, *buy_com, *search, *view_orders, *view_detail, *back, *my_sort;
     QLineEdit* search_E, *view_detail_E;
     QString Uid, Balance;
     QTableView* table;
+    QComboBox* sort_attribute, *sort_order;
 };
 
 #endif // BUYER_SCREEN_H

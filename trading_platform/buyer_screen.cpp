@@ -4,6 +4,7 @@
 #include <QStandardItemModel>
 #include <QHeaderView>
 #include <QMessageBox>
+
 #include "buyer_screen.h"
 #include "user_screen.h"
 #include "global.h"
@@ -73,9 +74,23 @@ Buyer_Screen::Buyer_Screen(QWidget *parent, QString id) :
 
     table = new QTableView(this);
     table->setGeometry(QRect(600,50,900,600));
-    table->hide();
     table->setAlternatingRowColors(true);
     table->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    sort_attribute = new QComboBox(this);
+    sort_attribute->addItem(tr("编号"));
+    sort_attribute->addItem(tr("价格"));
+    sort_attribute->setGeometry(QRect(600,670,200,50));
+
+    sort_order = new QComboBox(this);
+    sort_order->addItem(tr("升序"));
+    sort_order->addItem(tr("降序"));
+    sort_order->setGeometry(QRect(850,670,200,50));
+
+    my_sort = new QPushButton(this);
+    my_sort->setText(tr("排序"));
+    my_sort->setGeometry(QRect(1100,670,200,50));
+
 
     connect(view_coms,SIGNAL(clicked()),this,SLOT(View_Coms()));
     connect(search,SIGNAL(clicked()),this,SLOT(Search()));
@@ -83,6 +98,7 @@ Buyer_Screen::Buyer_Screen(QWidget *parent, QString id) :
     connect(view_orders,SIGNAL(clicked()),this,SLOT(View_Orders()));
     connect(view_detail,SIGNAL(clicked()),this,SLOT(View_Detail()));
     connect(back,SIGNAL(clicked()),this,SLOT(Back()));
+    connect(my_sort,SIGNAL(clicked()),this,SLOT(My_Sort()));
 }
 
 Buyer_Screen::~Buyer_Screen()
@@ -212,4 +228,20 @@ void Buyer_Screen::Back(){
     User_Screen* user_window = new User_Screen(nullptr,Uid);
     user_window->show();
     this->close();
+}
+void Buyer_Screen::My_Sort(){
+    int idx1 = sort_attribute->currentIndex();
+    int idx2 = sort_order->currentIndex();
+    if(idx1==0){
+        if(idx2==0)
+            table->sortByColumn(0,Qt::AscendingOrder);
+        else
+            table->sortByColumn(0,Qt::DescendingOrder);
+    }
+    else{
+        if(idx2==0)
+            table->sortByColumn(2,Qt::AscendingOrder);
+        else
+            table->sortByColumn(2,Qt::DescendingOrder);
+    }
 }

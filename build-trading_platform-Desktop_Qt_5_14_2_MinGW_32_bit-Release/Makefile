@@ -224,7 +224,6 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/qt_config.prf \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/toolchain.prf \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/default_pre.prf \
@@ -255,6 +254,7 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Network.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl \
+		.qmake.stash \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf \
 		../trading_platform/image.qrc
 	$(QMAKE) -o Makefile ..\trading_platform\trading_platform.pro -spec win32-g++ "CONFIG+=qtquickcompiler"
@@ -412,7 +412,6 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/qt_config.prf:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++/qmake.conf:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/toolchain.prf:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/default_pre.prf:
@@ -443,6 +442,7 @@ Makefile: ../trading_platform/trading_platform.pro ../../../../Qt/Qt5.14.2/5.14.
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Network.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/Qt5Core.prl:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/lib/qtmain.prl:
+.qmake.stash:
 ../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/features/build_pass.prf:
 ../trading_platform/image.qrc:
 qmake: FORCE

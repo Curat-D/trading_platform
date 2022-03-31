@@ -596,6 +596,8 @@ debug/moc_buyer_screen.cpp: ../trading_platform/buyer_screen.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		debug/moc_predefs.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/QT/projects/trading_platform/build-trading_platform-Desktop_Qt_5_14_2_MinGW_32_bit-Release/debug/moc_predefs.h -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/QT/projects/trading_platform/trading_platform -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_32/i686-w64-mingw32/include ..\trading_platform\buyer_screen.h -o debug\moc_buyer_screen.cpp
@@ -1484,6 +1486,8 @@ debug/moc_seller_screen.cpp: ../trading_platform/seller_screen.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		debug/moc_predefs.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/bin/moc.exe
 	C:\Qt\Qt5.14.2\5.14.2\mingw73_32\bin\moc.exe $(DEFINES) --include C:/QT/projects/trading_platform/build-trading_platform-Desktop_Qt_5_14_2_MinGW_32_bit-Release/debug/moc_predefs.h -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/mkspecs/win32-g++ -IC:/QT/projects/trading_platform/trading_platform -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtANGLE -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtQml -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtNetwork -IC:/Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtCore -I. -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32 -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.14.2/Tools/mingw730_32/lib/gcc/i686-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.14.2/Tools/mingw730_32/i686-w64-mingw32/include ..\trading_platform\seller_screen.h -o debug\moc_seller_screen.cpp
@@ -2071,6 +2075,8 @@ debug/buyer_screen.o: ../trading_platform/buyer_screen.cpp ../../../../Qt/Qt5.14
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextoption.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QTableView \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtableview.h \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		../trading_platform/user_screen.h \
 		../trading_platform/global.h \
 		../trading_platform/command.h \
@@ -3302,6 +3308,8 @@ debug/seller_screen.o: ../trading_platform/seller_screen.cpp ../../../../Qt/Qt5.
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtGui/qtextoption.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QTableView \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtableview.h \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		../trading_platform/user_screen.h \
 		../trading_platform/global.h \
 		../trading_platform/command.h \
@@ -3464,6 +3472,8 @@ debug/user_screen.o: ../trading_platform/user_screen.cpp ../../../../Qt/Qt5.14.2
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qstyle.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qtabbar.h \
 		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qrubberband.h \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/QComboBox \
+		../../../../Qt/Qt5.14.2/5.14.2/mingw73_32/include/QtWidgets/qcombobox.h \
 		../trading_platform/seller_screen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\user_screen.o ..\trading_platform\user_screen.cpp
 

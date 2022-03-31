@@ -348,8 +348,10 @@ QStandardItemModel* Command::select_B(QString table){
             QStringList list = line.split(",");
             if(list[7] == "销售中"){
                 QList<QStandardItem*> tuple;
+                QStandardItem* Price = new QStandardItem();
+                Price->setData(list[2].toFloat(),Qt::DisplayRole);
                 tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                      << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                      << Price << new QStandardItem(list[3])
                       << new QStandardItem(list[6])<< new QStandardItem(list[5]);
                 model->insertRow(row, tuple); //在第0行插入一条记录
                 row++;
@@ -371,8 +373,10 @@ QStandardItemModel* Command::select_B(QString table){
             QStringList list = line.split(",");
             if(list[6] == id.mid(0,4)){
                 QList<QStandardItem*> tuple;
+                QStandardItem* Price = new QStandardItem();
+                Price->setData(list[2].toFloat(),Qt::DisplayRole);
                 tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                      << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                      << Price << new QStandardItem(list[3])
                       << new QStandardItem(list[4]) << new QStandardItem(list[5]);
                 model->insertRow(row, tuple); //在第0行插入一条记录
                 row++;
@@ -409,8 +413,10 @@ QStandardItemModel* Command::select_B(QString table, QString attribute, QString 
                 if(list[7] == "销售中")
                     if(list[1].contains(value)){
                         QList<QStandardItem*> tuple;
+                        QStandardItem* Price = new QStandardItem();
+                        Price->setData(list[2].toFloat(),Qt::DisplayRole);
                         tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                              << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                              << Price << new QStandardItem(list[3])
                               << new QStandardItem(list[6])<< new QStandardItem(list[5]);
                         model->insertRow(row, tuple); //在第0行插入一条记录
                         row++;
@@ -514,8 +520,10 @@ QStandardItemModel* Command::select_S(QString table){
             QStringList list = line.split(",");
             if(list[5] == id.mid(0,4)){
                 QList<QStandardItem*> tuple;
+                QStandardItem* Price = new QStandardItem();
+                Price->setData(list[2].toFloat(),Qt::DisplayRole);
                 tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                      << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                      << Price << new QStandardItem(list[3])
                       << new QStandardItem(list[6])<< new QStandardItem(list[7]);
                 model->insertRow(row, tuple); //在第0行插入一条记录
                 row++;
@@ -537,8 +545,10 @@ QStandardItemModel* Command::select_S(QString table){
             QStringList list = line.split(",");
             if(list[5] == id.mid(0,4)){
                 QList<QStandardItem*> tuple;
+                QStandardItem* Price = new QStandardItem();
+                Price->setData(list[2].toFloat(),Qt::DisplayRole);
                 tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                      << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                      << Price << new QStandardItem(list[3])
                       << new QStandardItem(list[4]) << new QStandardItem(list[6]);
                 model->insertRow(row, tuple); //在第0行插入一条记录
                 row++;
@@ -575,8 +585,10 @@ QStandardItemModel* Command::select_S(QString table, QString attribute, QString 
                 if(list[7] == "销售中")
                     if(list[1].contains(value)){
                         QList<QStandardItem*> tuple;
+                        QStandardItem* Price = new QStandardItem();
+                        Price->setData(list[2].toFloat(),Qt::DisplayRole);
                         tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                              << new QStandardItem(list[2]) << new QStandardItem(list[3])
+                              << Price << new QStandardItem(list[3])
                               << new QStandardItem(list[6])<< new QStandardItem(list[5]);
                         model->insertRow(row, tuple); //在第0行插入一条记录
                         row++;
@@ -599,8 +611,10 @@ QStandardItemModel* Command::select_S(QString table, QString attribute, QString 
                     if(list[0] == value){
                         jdg=1;
                         QList<QStandardItem*> tuple;
+                        QStandardItem* Price = new QStandardItem();
+                        Price->setData(list[2].toFloat(),Qt::DisplayRole);
                         tuple << new QStandardItem(list[0]) << new QStandardItem(list[1])
-                              << new QStandardItem(list[2]) << new QStandardItem(list[6])
+                              << Price << new QStandardItem(list[6])
                               << new QStandardItem(list[4])<< new QStandardItem(list[5]);
                         model->insertRow(row, tuple); //在第0行插入一条记录
                         row++;
